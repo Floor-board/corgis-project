@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, flash
+from flask import Flask, request, render_template, flash, request
 from markupsafe import Markup
 
 import os
@@ -25,6 +25,25 @@ def IINTPY():
 @app.route('/page5')
 def TEOTB():
     return render_template('TEOTB.html')
+
+# Load the JSON data at startup
+with open('nuclear_explosions.json') as f:
+    data = json.load(f)
+
+@app.route("/submit", methods=["POST"])
+def render_response():
+    year = int(request.form['Year'].split('.')[-1])  # Extract the year from the submitted value
+    
+    # Count the number of tests for the specified year
+    count = sum(1 for test in data if test['Date']['Year'] == year)
+    
+    return render_template('NTPY.html', Year2 = count, year = year)
+    
+    
+    #if count > 0:
+    #    return jsonify({"message": f"The year {year} had {count} nuclear tests."})
+    #else:
+    #    return jsonify({"message": f"The year {year} had no nuclear tests."})
 
 if __name__ == '__main__':
     app.run(debug=False) # change to False when running in production

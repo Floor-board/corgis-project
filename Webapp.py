@@ -39,12 +39,29 @@ def render_response():
     
     return render_template('NTPY.html', Year2 = count, year = year)
     
-    
     #if count > 0:
     #    return jsonify({"message": f"The year {year} had {count} nuclear tests."})
     #else:
     #    return jsonify({"message": f"The year {year} had no nuclear tests."})
 
-if __name__ == '__main__':
-    app.run(debug=False) # change to False when running in production
+
+@app.route("/submit", methods=["POST"])
+def submit_response():
+    country = request.form.get('Country')  # Use get() to avoid KeyError
+    print(f"Received country: {country}")
+    
+    try:
+        # Count tests for the selected country
+        count = sum(1 for test in data if test['Location'].get('Country') == country)
+        
+        return render_template('NTCPC.html', CountryCount=count, country=country)
+    except KeyError as ke:
+        print(f"KeyError: {ke}")
+        return "Country not found in data", 400
+    except Exception as e:
+        print(f"Error: {e}")
+        return "An error occurred", 500
+
+if __name__ == "__main__":
+    app.run(debug=False)
     

@@ -30,16 +30,18 @@ img {
 }
 
 .expand {
-  white-space: nowrap; 
-  width: 200px; 
-  border: 1px solid #000000;
-  overflow: hidden;
-  text-overflow: clip;
-}	
-	
+	white-space: nowrap; 
+	width: 100vw; 
+	height: 50px;
+	overflow: hidden;
+	text-overflow: clip;
+	transition: width 2s, height 4s;
+      }	
+      	
 .expand:hover {
-  white-space: nowrap; 
-  width: 400px; 
-  overflow: hidden;
-  text-overflow: clip;
-}
+        white-space: nowrap; 
+        width: 100vw;
+        height: 200px;
+        overflow: hidden;
+        text-overflow: clip;
+      }

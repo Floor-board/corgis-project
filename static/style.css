@@ -6,24 +6,40 @@ h3 {
 	margin:20px;
 }
 
-.solid_border{
+.solid_border {
 	border-style:solid;
 	margin:20px;
+	transtion: width2s;
 }
 
 p {
 	padding:20px;
 }
 
-img{
+img {
 	float: right;
 }
 
-.Left-side{
+.Left-side {
 	float: left;
 }
 
-.dotted-border{
+.dotted-border {
 	border-style: dotted:
 	margin: 20px:
+}
+
+.expand {
+  white-space: nowrap; 
+  width: 200px; 
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: clip;
+}	
+	
+.expand:hover {
+  white-space: nowrap; 
+  width: 400px; 
+  overflow: hidden;
+  text-overflow: clip;
 }

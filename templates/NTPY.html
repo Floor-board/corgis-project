@@ -28,7 +28,7 @@
 		<h1>Nuclear Test Per Year</h1>
 		<p>Nuclear bombs have been tested through the years, in the box below you can see how many have been conducted per year. (From 1945 [as that was the first time one was used] to the year 2000)</p>
 		
-		<form action="/submit" method="post">
+		<form action="/submit">
 		<label for="year">Choose a year to see how many nuclear tests were conducted that year:</label>
 		<select name="Year" id="year">
 			<option value="year.1945">1945</option>
@@ -94,7 +94,7 @@
 		<p>there were {{Year2}} nuclear bombs tested in {{year}}</p>
 		<p>(Note that if you selected 1945 2 of the 3 were the bombs dropped on Heroshima and Nagasaki, every other nuclear bomb detonation was a test)</p>
 		<ul>
-			<li></li>
+			<li>{{name}}</li>
 		</ul>
 	</body>
   </html>

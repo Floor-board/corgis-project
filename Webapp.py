@@ -27,24 +27,25 @@ def TEOTB():
     return render_template('TEOTB.html')
 
 # Load the JSON data at startup
-with open('nuclear_explosions.json') as f:
-    data = json.load(f)
 
-@app.route("/submit", methods=["POST"])
+@app.route("/submit")
 def render_response():
-    year = int(request.form['Year'].split('.')[-1])  # Extract the year from the submitted value
+    with open('nuclear_explosions.json') as f:
+        data = json.load(f)
+    year = int(request.args['Year'].split('.')[-1])  # Extract the year from the submitted value
     
     # Count the number of tests for the specified year
     count = sum(1 for test in data if test['Date']['Year'] == year)
     if count > 0:
         return render_template('NTPY.html', Year2 = count, year = year)
     else:
-        return render_template('NTPY.html', Year2 = "here were no nuclear test", year = year)
+        return render_template('NTPY.html', Year2 = "here were no nuclear test", year = year, name = name)
   
-@app.route("/submit", methods=["POST"])
+@app.route("/response")
 def submit_response():
-    country = request.form.get('Country')  # Use get() to avoid KeyError
-    print(f"Received country: {country}")
+    with open('nuclear_explosions.json') as f:
+        data = json.load(f)
+    country = request.args['Country']  # Use get() to avoid KeyError
     
     # Count tests for the selected country
     count = sum(1 for test in data if test['Location']['Country'] == country)
@@ -52,4 +53,4 @@ def submit_response():
     return render_template('NTCPC.html', CountryCount=count, country=country)
 
 if __name__=="__main__":
-    app.run(debug=False)
+    app.run(debug=True)

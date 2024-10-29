@@ -25,7 +25,7 @@
 		  </div>
 		</nav>
 		<h1>Nuclear test conducted per country</h1>
-		<form action="/submit" method="post">
+		<form action="/response">
 			<label for="country">Choose a country to see how many nuclear tests were conducted by that country:</label>
 			<select name="Country" id="Country">
 				<option value="Afghanistan">Afghanistan</option>
@@ -226,6 +226,6 @@
 			</select>
 			<input type="submit" value="Submit">
 		</form>
-		<p>This is thee amount of nuclear test conducted by {{country}}: {{NTCBC}}</p>
+		<p>This is thee amount of nuclear test conducted by {{country}}: {{CountryCount}}</p>
 	</body>
   </html>

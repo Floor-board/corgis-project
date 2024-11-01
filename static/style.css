@@ -20,8 +20,12 @@ img {
 	float: right;
 }
 
-.Left-side {
+.Left-float {
 	float: left;
+}
+
+.Right-float {
+	float: right;
 }
 
 .dotted-border {

@@ -53,4 +53,4 @@ def submit_response():
     return render_template('NTCPC.html', CountryCount=count, country=country)
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=False)

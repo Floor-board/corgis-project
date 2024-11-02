@@ -144,18 +144,7 @@ if 0 == 0:
     count53 = sum(1 for test in data if test['Date']['Year'] == year53)
     count54 = sum(1 for test in data if test['Date']['Year'] == year54)
     count55 = sum(1 for test in data if test['Date']['Year'] == year55)
-    if 1 == 1: 
-        return render_template('IINTPY.html', 
-        TO45 = count1, 
-        TO46 = count2, 
-        TO47 = count3, 
-        TO48 = count4, 
-        TO49 = count5, 
-        TO50 = count6, 
-        TO51 = count7, 
-        TO52 = count8, 
-        TO53 = count9, 
-        TO54 = count10, 
+    return render_template('IINTPY.html', TO45 = count1, TO46 = count2, TO47 = count3, TO48 = count4, TO49 = count5, TO50 = count6, TO51 = count7, TO52 = count8, TO53 = count9, TO54 = count10, 
         TO55 = count11, 
         TO56 = count12, 
         TO57 = count13, 
@@ -201,8 +190,7 @@ if 0 == 0:
         TO97 = count53,
         TO98 = count54,
         TO99 = count55,
-        TO00 = count55
-    )
+        TO00 = count55)
 
 
 @app.route("/submit")

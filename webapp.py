@@ -144,7 +144,8 @@ if 0 == 0:
     count53 = sum(1 for test in data if test['Date']['Year'] == year53)
     count54 = sum(1 for test in data if test['Date']['Year'] == year54)
     count55 = sum(1 for test in data if test['Date']['Year'] == year55)
-    return render_template('IINTPY.html', 
+    if 1 == 1: 
+        return render_template('IINTPY.html', 
         TO45 = count1, 
         TO46 = count2, 
         TO47 = count3, 

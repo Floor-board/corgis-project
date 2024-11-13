@@ -19,6 +19,7 @@
                     text: "Nuclear Bomb Tests from 1945 to 2000"
                 },
                 axisX: {
+					valueFormatString: "####",
                     title: "Year",
                     interval: 5
                 },
@@ -26,24 +27,11 @@
                     title: "Number of Tests",
                     includeZero: true
                 },
-                data: [{        
+                data: [{  
+					xValueFormatString: "####",
                     type: "line",
                     indexLabelFontSize: 16,
-                    dataPoints: [
-			{ x: 1944, y: 0},
-                        { x: 1945, y: {{TO45}} },
-                        { x: 1950, y: 20 },
-                        { x: 1955, y: 65 },
-                        { x: 1960, y: 178 },
-                        { x: 1965, y: 350 },
-                        { x: 1970, y: 450 },
-                        { x: 1975, y: 520 },
-                        { x: 1980, y: 580 },
-                        { x: 1985, y: 610 },
-                        { x: 1990, y: 625 },
-                        { x: 1995, y: 630 },
-                        { x: 2000, y: 632 }
-                    ]
+                    dataPoints: {{DataP | safe}}                    
                 }]
             });
             chart.render();
@@ -71,5 +59,6 @@
 	    
 	    <h1>The increase in nuclear bomb test per year</h1>
 	     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+		<h3>In 1945 there was actually only one test, the other two explosions were the bombs dropped on Japan marking the end of WW2</h3>
 	</body>
   </html>
